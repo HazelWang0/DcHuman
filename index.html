@@ -63,7 +63,7 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
+          <!-- <a class="navbar-item" href="https://hypernerf.github.io">
             HyperNeRF
           </a>
           <a class="navbar-item" href="https://nerfies.github.io">
@@ -74,7 +74,7 @@
           </a>
           <a class="navbar-item" href="https://photoshape.github.io">
             PhotoShape
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/xxx"
+                <a  
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -137,9 +137,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">DcHuman</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">DcHuman</span> generates 3D avatar models freely with texts. 
       </h2>
     </div>
   </div>
@@ -155,7 +153,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present a virtual human generation framework based on a Deep Conditional Diffusion Model (DCDM).   
+            We present a avatar generation framework based on a Deep Conditional Diffusion Model (DCDM) called DcHuman.   
           </p>
           <p>
             Our approach comprises two main components: the human body's implicit neural field and the Deep Conditional Diffusion Model itself. 
@@ -169,7 +167,7 @@
             In the second stage, we devised a collaborative optimization strategy. Pre-trained Deep Conditional Diffusion Model's extensive semantic priors and a conditional denoising restoration strategy are used to recover high-precision texture-guided images. This optimizes the texture representation of the implicit human neural field. This stage capitalizes on color information obtained in the first stage as texture priors. Collaborating with depth information, it narrows down the diffusion model's image distribution to a plausible texture range. This iterative process elevates texture quality and global consistency, culminating in refined high-quality human models.
           </p> -->
           <p>
-            We show the effectiveness of its approach through experiments in virtual human model generation. It proves that compared to prior methods, the generated models exhibit higher texture quality, improved feature consistency, and a greater sense of realism, all while staying faithful to given textual input and maintaining prescribed human postures and forms.
+            We show the effectiveness of DcHuman through experiments in virtual human model generation. It proves that compared to prior methods, the generated models exhibit higher texture quality, improved feature consistency, and a greater sense of realism, all while staying faithful to given textual input and maintaining prescribed human postures and forms.
           </p>
         </div>
       </div>
@@ -188,8 +186,14 @@
       <div class="content">
         <h2 class="title is-3">Framework</h2>
         <p>
-          Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-          would be impossible without nerfies since it would require going through a wall.
+          Using <i>DcHuman</i> In the first stage, we harnesses the powerful semantic priors of a pre-trained deep conditional diffusion model 
+          to provide global semantic feature supervision. Guided by score distillation sampling, the model achieves human feature generation with global consistency.
+           Simultaneously, we employs an implicit human neural rendering module based on NeuS. Comprising human reconstruction and style generation modules, 
+           a shared weighted function is used to constrain human features while incorporating depth information into the latent space of the diffusion model.
+
+          In the second stage, we reconstructs the texture generation module. Utilizing the color information obtained from the first stage as texture priors, 
+          the same pre-trained deep conditional diffusion model is employed. Through a strategy of conditional denoising and restoration, high-precision texture guidance 
+          images are recovered as part of an iterative refinement process for DcHuman's texture.
         </p>
         <!-- <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/dollyzoom-stacked.mp4"
@@ -211,8 +215,10 @@
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            we conducts a comparative and qualitative analysis with AvatarCLIP, DreamFusion, and SJC methods.  
+            concerning the geometric precision and texture realism in full-body avatar generation, our novel approach accurately represents character attributes and 
+            exhibits significant improvement over existing methods in terms of global texture consistency. Concurrently, it outperforms 
+            existing methods in identity generation, stylization, and feature editing tasks. 
           </p>
           <!-- <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dollyzoom-stacked.mp4"
@@ -275,10 +281,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         >
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -286,16 +292,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Page borrow from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>
           </p>
         </div>
       </div>
